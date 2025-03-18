@@ -10,9 +10,13 @@ const mySubButton = document.getElementById('subtractButton');
 
 
 // skriv din eventhandler kode her ---------------------------------------
+myAddButton.addEventListener('click', function(){ 
+    addValue()
+})
 
-
-
+mySubButton.addEventListener('click', function(){ 
+    subtractValue()
+})
 
 //-------------------------------------------------------------------------
 
@@ -41,8 +45,11 @@ function addValue() {
 const myDiceRes = document.getElementById('diceResult');
 const diceButton = document.getElementById('rollDiceOne');
 
-
-
+    
+diceButton.addEventListener('click', () => {
+    let diceRoll = getRandomNumber(1, 6);
+    showResult(diceRoll, myDiceRes)
+})
   
     /* disse to liner skal afvikles i en arrow funktion bundet til en eventhandler på diceButton
     let diceRoll = getRandomNumber(1, 6);
@@ -69,8 +76,9 @@ const myLiveText = document.getElementById('myLiveText');
 let myLiveTextResult = document.getElementById('tasteResult');
 
 // skriv din eventhandler kode her ---------------------------------------
-
-
+myLiveText.addEventListener('keyup', () => {
+    showResult(myLiveText.value, myLiveTextResult)
+})
 
 
 //-------------------------------------------------------------------------
